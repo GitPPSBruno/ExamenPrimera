@@ -22,6 +22,8 @@ class CalculadoraTest {
 	double Solucion2Prueba1;
 	double Solucion2Prueba2;
 	double Solucion2Prueba3;
+
+	// Variables Tercer Test
 	@BeforeEach
 	void setUp() throws Exception {
 		Solucion1Prueba1 = new Calculadora().solucion1(1, -5, 6);
@@ -32,6 +34,7 @@ class CalculadoraTest {
 		Solucion2Prueba1 = new Calculadora().solucion2(1, -5, 6);
 		Solucion2Prueba2 = new Calculadora().solucion2(2, -7, 3);
 		Solucion2Prueba3 = new Calculadora().solucion2(-1, -7, -10);
+
 	}
 	@AfterEach
 	void tearDown() throws Exception {
@@ -43,6 +46,7 @@ class CalculadoraTest {
 		Solucion2Prueba1 = 0;
 		Solucion2Prueba2 = 0;
 		Solucion2Prueba3 = 0;
+
 	}
 	@Test
 	@DisplayName("PrimerTest")
@@ -59,4 +63,13 @@ class CalculadoraTest {
 		Assertions.assertEquals(0.5, Solucion2Prueba2);
 		Assertions.assertEquals(-2, Solucion2Prueba3);
 	}
+	@Test
+	@DisplayName("TecerTest")
+	void testSolucion1Incorrecta() {
+		Exception exception = Assertions.assertThrows(ArithmeticException.class,() -> new Calculadora().solucion1(1, 1, 1));
+
+		//Assertions.assertEquals("class java.lang.ArithmeticException", exception.getClass().toString());
+	}
 }
+
+
