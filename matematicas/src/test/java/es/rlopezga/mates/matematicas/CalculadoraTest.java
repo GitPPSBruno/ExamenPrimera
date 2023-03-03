@@ -70,6 +70,14 @@ class CalculadoraTest {
 
 		//Assertions.assertEquals("class java.lang.ArithmeticException", exception.getClass().toString());
 	}
+
+	@Test
+	@DisplayName("CuartoTest")
+	void testSolucion2Incorrecta() {
+		Exception exception = Assertions.assertThrows(ArithmeticException.class,() -> new Calculadora().solucion2(1, 1, 1));
+
+		//Assertions.assertEquals("class java.lang.ArithmeticException", exception.getClass().toString());
+	}
 }
 
 
