@@ -116,7 +116,14 @@ class CalculadoraTest {
 		Assertions.assertFalse(Primo5);
 		Assertions.assertFalse(Primo6);
 	}
+	@Test
+	@DisplayName("Septimotest")
+	void testPrimoIncorrecto() {
+		Exception exception = Assertions.assertThrows(IllegalArgumentException.class,() -> new Calculadora().esPrimo(-1));
+		Exception exception2 = Assertions.assertThrows(IllegalArgumentException.class,() -> new Calculadora().esPrimo(0));
+		Exception exception3 = Assertions.assertThrows(IllegalArgumentException.class,() -> new Calculadora().esPrimo(1));
 
+	}
 }
 
 
