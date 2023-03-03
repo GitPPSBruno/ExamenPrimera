@@ -24,12 +24,21 @@ class CalculadoraTest {
 	boolean Primo1;
 	boolean Primo2;
 	boolean Primo3;
+
+	boolean Primo4;
+	boolean Primo5;
+	boolean Primo6;
 	@BeforeEach
 	void setUp() throws Exception {
+		//Test 6
+		Primo4 = new Calculadora().esPrimo(15);
+		Primo5 = new Calculadora().esPrimo(16);
+		Primo6 = new Calculadora().esPrimo(20);
+
 		//Test 5
 		Primo1 = new Calculadora().esPrimo(2);
-		Primo2 = new Calculadora().esPrimo(2);
-		Primo3 = new Calculadora().esPrimo(2);
+		Primo2 = new Calculadora().esPrimo(7);
+		Primo3 = new Calculadora().esPrimo(19);
 		Solucion1Prueba1 = new Calculadora().solucion1(1, -5, 6);
 		Solucion1Prueba2 = new Calculadora().solucion1(2, -7, 3);
 		Solucion1Prueba3 = new Calculadora().solucion1(-1, -7, -10);
@@ -42,6 +51,11 @@ class CalculadoraTest {
 	}
 	@AfterEach
 	void tearDown() throws Exception {
+		// Test 6
+		Primo4 = false;
+		Primo5 = false;
+		Primo6 = false;
+
 		// Test 5
 		Primo1 = false;
 		Primo2 = false;
@@ -93,6 +107,14 @@ class CalculadoraTest {
 		Assertions.assertTrue(Primo1);
 		Assertions.assertTrue(Primo2);
 		Assertions.assertTrue(Primo3);
+	}
+
+	@Test
+	@DisplayName("SextoTest")
+	void testNoPrimo() {
+		Assertions.assertFalse(Primo4);
+		Assertions.assertFalse(Primo5);
+		Assertions.assertFalse(Primo6);
 	}
 
 }
